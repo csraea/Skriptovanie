@@ -20,10 +20,10 @@ echo "--- OL4 ---"
 awk -F: '{gsub(/:/,"\n");print}' <(sed 's_::_:_g' <(echo $DATA4))       # OL4
 
 echo "--- OL5 ---"
-awk '{sum=sum+$5} END {print sum}' <(grep -E '(\.html|\.txt|\.md)' <(ls -al $DATA5))        # OL5
+awk '{sum=sum+$5} END {print sum}' <(grep -E '(\.html|\.txt|\.md)' <(ls -al $DATA5))       # OL5
 
 echo "--- OL6 ---"
-awk '{printf $2"\t"$1"\n"}' <(sort -n <(uniq -c <(sort <(awk '{print $1}' $DATA6))))        # OL6
+awk '{printf $2"\t"$1"\n"}' <(sort -n <(uniq -c <(sort <(awk '{print $1}' $DATA6))))       # OL6
 
 #    Contact autor:
 #    MAIL -          csraea@gmail.com
