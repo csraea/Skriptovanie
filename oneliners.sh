@@ -17,7 +17,7 @@ echo "--- OL3 ---"
 awk '{FS="\t"; iCol = $2; $2 = $3; $3 = iCol; print;} ' OFS=$'\t' $DATA3      # OL3
 
 echo "--- OL4 ---"
-awk -F: '{gsub(/:/,"\n");print}' <(sed 's_::_:_g' <(echo $DATA4))       # OL4
+awk -F: '{gsub(/:,"\n");print}' <(sed 's_::_:_g' <(echo $DATA4))       # OL4
 
 echo "--- OL5 ---"
 awk '{sum=sum+$5} END {print sum}' <(grep -E '(\.html|\.txt|\.md)' <(ls -al $DATA5))       # OL5
